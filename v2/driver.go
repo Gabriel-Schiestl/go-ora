@@ -319,7 +319,7 @@ func RegisterTypeWithOwner(conn *sql.DB, owner, typeName, arrayTypeName string, 
 			case "NUMBER", "INTEGER":
 				param.DataType = NUMBER
 				param.MaxLen = converters.MAX_LEN_NUMBER
-			case "VARCHAR2":
+			case "VARCHAR2", "CHAR":
 				param.DataType = NCHAR
 				param.CharsetForm = 1
 				param.ContFlag = 16
