@@ -1405,7 +1405,7 @@ func (stmt *Stmt) structPar(parValue driver.Value, parIndex int) (processedPars 
 		// if type mentioned so driver should create a temporary type and then update the current value
 		typeErr := fmt.Errorf("error passing filed %s as type %s", tempType.Field(fieldIndex).Name, _type)
 		switch _type {
-		case "number":
+		case "number", "integer":
 			var fieldVal *oraTypes.Number
 			if hasNullValue {
 				fieldVal = &oraTypes.Number{}

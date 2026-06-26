@@ -653,7 +653,7 @@ func parseInputField(structValue reflect.Value, name, _type string, fieldIndex i
 	}
 	typeErr := fmt.Errorf("error passing field %s as type %s", fieldValue.Type().Name(), _type)
 	switch _type {
-	case "number":
+	case "number", "integer":
 		// var fieldVal float64
 		tempPar.Value, err = NewNumber(fieldValue.Interface()) // getFloat(fieldValue.Interface())
 		if err != nil {

@@ -305,7 +305,7 @@ func RegisterTypeWithOwner(conn *sql.DB, owner, typeName, arrayTypeName string, 
 		TypeName: typeName,
 	}
 	switch strings.ToUpper(typeName) {
-	case "NUMBER":
+	case "NUMBER", "INTEGER":
 		arrayParam.DataType = types.NUMBER
 	case "VARCHAR2":
 		arrayParam.DataType = types.NCHAR
@@ -375,7 +375,7 @@ func RegisterTypeWithOwner(conn *sql.DB, owner, typeName, arrayTypeName string, 
 			param.Name = attName.String
 			param.TypeName = attTypeName.String
 			switch strings.ToUpper(attTypeName.String) {
-			case "NUMBER":
+			case "NUMBER", "INTEGER":
 				param.DataType = types.NUMBER
 				param.MaxLen = int64(converters.MAX_LEN_NUMBER)
 			case "VARCHAR2":
